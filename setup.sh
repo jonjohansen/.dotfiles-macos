@@ -1,0 +1,7 @@
+### Setup the execution of the script ### 
+
+# Clone the git repository
+git clone git@github.com:jonjohansen/dotfiles-macos.git .dotfiles-macos
+
+cd .dotfiles-macos/sources
+./test.sh
