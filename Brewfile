@@ -14,11 +14,12 @@ brew 'zsh-completions'
 brew "zsh-syntax-highlighting"
 
 # Apps
-cask 'discord'
-cask 'slack'
+cask 'iterm2'
 cask 'google-chrome'
 cask 'visual-studio-code'
-cask 'iterm2'
+cask 'slack'
+cask 'discord'
+cask 'spotify'
 
 # Fonts
 cask font-dejavu-sans-mono-for-powerline
