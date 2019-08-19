@@ -12,6 +12,7 @@ brew 'git'
 brew 'zsh'
 brew 'zsh-completions'
 brew "zsh-syntax-highlighting"
+brew 'zsh-completions'
 
 # Apps
 cask 'iterm2'
