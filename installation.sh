@@ -2,9 +2,9 @@
 export DOTFILES="$HOME/.dotfiles-macos"
 
 # Get sudo from user for this session, just in case
-sudo -v 
+sudo true
 
- Install brew if it is not installed
+#Install brew if it is not installed
 if test ! $(which brew); then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
