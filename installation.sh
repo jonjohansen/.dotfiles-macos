@@ -1,11 +1,11 @@
 ### Basic installation of the dotfiles ###
-# Colors
-BLUE='\033[0;1;34m'
-NC='\033[0m'
-printf "${BLUE}Getting started on some awesome dotfiles 😺${NC}\n"
 
-# Used for error checking throughout the script.
-source check_errors.sh
+# Colors
+source helpers/colors
+# Error function
+source helpers/check_errors.sh
+
+printf "${BLUE}Setting up some awesome dotfiles 😺${NC}\n"
 
 # Save the path to the dotfiles
 export DOTFILES="$HOME/.dotfiles-macos"
@@ -16,13 +16,16 @@ sudo true
 # Install brew if it is not installed
 if test ! $(which brew); then
   printf "${BLUE}Installing brew${NC}\n"
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" > /dev/null
   check_errs $?
 fi
 
-brew update; check_errs $?
-brew upgrade; check_errs $?
-brew tap homebrew/bundle; check_errs $?
+printf "${BLUE}Updating brew. This might take a while..${NC}\n"
+brew update > /dev/null; check_errs $?
+brew upgrade > /dev/null; check_errs $?
+brew tap homebrew/bundle > /dev/null; check_errs $?
+
+printf "${BLUE}Installing from Brewfile..${NC}\n"
 brew bundle; check_errs $?
 
 printf "${BLUE}Setting iterm settings${NC}\n"
@@ -40,9 +43,10 @@ ln -s $DOTFILES/.zshrc $HOME/.zshrc; check_errs $?
 
 ## Global git config
 # Replace .gitconfig with symlink here
-printf "${BLUE}Replacing git config${NC}\n"
+printf "${BLUE}Replacing global gitconfig & gitignore${NC}\n"
 rm -rf $HOME/.gitconfig; check_errs $?
 ln -s $DOTFILES/git/.gitconfig $HOME/.gitconfig; check_errs $?
+
 # Replace .gitignore with symlink here
 rm -rf $HOME/.gitignore; check_errs $?
 ln -s $DOTFILES/git/.gitignore $HOME/.gitignore; check_errs $?

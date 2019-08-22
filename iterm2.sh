@@ -1,4 +1,4 @@
-source check_errors.sh
+source helpers/check_errors.sh
 # Specify the preferences directory
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/.dotfiles-macos/iterm2"; check_errs $?
 

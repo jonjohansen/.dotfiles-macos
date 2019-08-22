@@ -1,5 +1,6 @@
 ### MacOS settings ###
-source check_errors.sh
+source helpers/check_errors.sh
+
 # Set scrolling direction
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false; check_errs $?
 
