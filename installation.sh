@@ -46,7 +46,18 @@ ln -s $DOTFILES/.zshrc $HOME/.zshrc; check_errs $?
 printf "${BLUE}Replacing global gitconfig & gitignore${NC}\n"
 rm -rf $HOME/.gitconfig; check_errs $?
 ln -s $DOTFILES/git/.gitconfig $HOME/.gitconfig; check_errs $?
-
 # Replace .gitignore with symlink here
 rm -rf $HOME/.gitignore; check_errs $?
 ln -s $DOTFILES/git/.gitignore $HOME/.gitignore; check_errs $?
+
+# VSCode
+printf "${BLUE}Replacing vscode settings, keybindings and snippets. ${NC}\n"
+# If the folder doesn't exist we create it
+mkdir -p ~/Library/Application\ Support/Code/User/; check_errs $?
+## Settings
+ln -sf $DOTFILES/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json; check_errs $?
+## Bindings
+ln -sf $DOTFILES/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json; check_errs $?
+## Snippets
+ln -sf $DOTFILES/vscode/.dotfiles/VSCode/snippets/ ~/Library/Application\ Support/Code/User; check_errs $?
+

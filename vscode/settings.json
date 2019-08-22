@@ -1,0 +1,21 @@
+{
+    "window.zoomLevel": 0,
+    "workbench.colorTheme": "Nord",
+    "workbench.statusBar.feedback.visible": false,
+    "terminal.external.osxExec": "iterm.app",
+    "terminal.integrated.fontFamily": "DejaVu Sans Mono for Powerline",
+    "python.pythonPath": "/Library/Frameworks/Python.framework/Versions/3.7/bin/python3",
+    "window.newWindowDimensions": "maximized",
+    "latex-workshop.view.pdf.viewer": "tab",
+    "editor.fontLigatures": true,
+    "editor.minimap.enabled": false,
+    "html.format.wrapAttributes": "aligned-multiple",
+    "editor.wordWrap": "on",
+    "[html]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "liveSassCompile.settings.generateMap" : false
+}
