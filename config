@@ -6,13 +6,14 @@
 source helpers/colors
 # Error function
 source helpers/check_errors.sh
+printf "\n${BLUE}Setting all configurations and settings${NC}\n\n"
 
 printf "${BLUE}Setting iterm settings${NC}\n"
 # Set iterm settings to target config file
-./iterm2.sh; check_errs $?
+./.iterm2; check_errs $?
 
 printf "${BLUE}Setting macOS settings${NC}\n"
-./macos.sh; check_errs $?
+./.macos; check_errs $?
 
 ## Zsh config
 # Remove zshrc if it exists, and symlink this in
