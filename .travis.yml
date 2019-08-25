@@ -2,4 +2,4 @@ os: osx
 osx_image: xcode11
 sudo: required
 
-script: ./installation.sh
+script: ./installation
