@@ -12,6 +12,7 @@ brew 'zsh'
 brew 'zsh-completions'
 brew "zsh-syntax-highlighting"
 brew 'zsh-completions'
+brew 'python'
 
 # Apps
 cask 'iterm2'
