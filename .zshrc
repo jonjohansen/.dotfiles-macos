@@ -24,8 +24,8 @@ GIT_AUTO_FETCH_INTERVAL=300
 # Load ZSH-magic
 source $ZSH/oh-my-zsh.sh
 # Load spaceship theme settings
-source $DOTFILES/spaceship.zsh
+source $DOTFILES/.spaceship
 # Load path settings
-source $DOTFILES/path.zsh
+source $DOTFILES/.path
 # Load aliases
-source $DOTFILES/alias.zsh
+source $DOTFILES/.alias
