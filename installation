@@ -7,7 +7,7 @@ source helpers/colors
 # Error function
 source helpers/check_errors.sh
 
-printf "${BLUE}Setting up some awesome dotfiles 😺${NC}\n"
+printf "\n${BLUE}Full installation of dotfiles starting now. 🤖${NC}\n\n"
 
 # Save the path to the dotfiles
 export DOTFILES="$HOME/.dotfiles-macos"
