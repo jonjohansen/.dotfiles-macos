@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 ### MacOS settings ###
 source helpers/check_errors.sh
 
