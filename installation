@@ -2,15 +2,15 @@
 
 ### Basic installation of the dotfiles ###
 
+export DOTFILES=$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )
+
 # Colors
-source helpers/colors
+source $DOTFILES/helpers/colors
 # Error function
-source helpers/check_errors.sh
+source $DOTFILES/helpers/check_errors.sh
 
 printf "\n${BLUE}Full installation of dotfiles starting now. 🤖${NC}\n\n"
 
-# Save the path to the dotfiles
-export DOTFILES="$HOME/.dotfiles-macos"
 
 # Get sudo from user for this session, just in case
 sudo true
@@ -22,7 +22,7 @@ if test ! $(which brew); then
   check_errs $?
 fi
 
-printf "${BLUE}Updating brew. This might take a while..${NC}\n"
+printf "${BLUE}Updating & Upgrading brew. This might take a while..${NC}\n"
 brew update > /dev/null; check_errs $?
 brew upgrade > /dev/null; check_errs $?
 brew tap homebrew/bundle > /dev/null; check_errs $?

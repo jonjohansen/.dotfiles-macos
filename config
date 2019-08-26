@@ -3,9 +3,9 @@
 ### Configurations and settings ###
 
 # Colors
-source helpers/colors
+source $DOTFILES/helpers/colors
 # Error function
-source helpers/check_errors.sh
+source $DOTFILES/helpers/check_errors.sh
 printf "\n${BLUE}Setting all configurations and settings${NC}\n\n"
 
 printf "${BLUE}Setting iterm settings${NC}\n"
@@ -40,3 +40,5 @@ ln -sf $DOTFILES/vscode/settings.json ~/Library/Application\ Support/Code/User/s
 ln -sf $DOTFILES/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json; check_errs $?
 ## Snippets
 ln -sf $DOTFILES/vscode/.dotfiles/VSCode/snippets/ ~/Library/Application\ Support/Code/User; check_errs $?
+## Extensions
+./vscode/bin/code-extensions install
