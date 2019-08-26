@@ -19,7 +19,7 @@ plugins=(
 
 # Auto fetch interval
 GIT_AUTO_FETCH_INTERVAL=300
-DEFAULT_CODE_EXTENSION_FILENAME=$DOTFILES/vscode/extensions
+export DEFAULT_CODE_EXTENSION_FILENAME="$DOTFILES/vscode/extensions"
 # Load ZSH-magic
 source $ZSH/oh-my-zsh.sh
 # Load spaceship theme settings
