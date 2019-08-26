@@ -41,4 +41,4 @@ ln -sf $DOTFILES/vscode/keybindings.json ~/Library/Application\ Support/Code/Use
 ## Snippets
 ln -sf $DOTFILES/vscode/.dotfiles/VSCode/snippets/ ~/Library/Application\ Support/Code/User; check_errs $?
 ## Extensions
-./vscode/bin/code-extensions install
+./vscode/bin/code-extensions install --filename ./vscode/extensions
