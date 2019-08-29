@@ -15,7 +15,7 @@ interactive=0
 install=0
 backup=0
 # Defaults
-filename="$DEFAULT_CODE_EXTENSION_FILENAME"
+filename=$DEFAULT_CODE_EXTENSION_FILENAME
 usage() {
   printf "$cliname [--help] [--interactive] <command> [<args>]
 
@@ -27,12 +27,14 @@ A small script to help backup and install extensions for Visual Studio Code
     $cliname  backup  [--filename <file>]
 
  Options:
-  -f <file>, --filename <file>  Filename to backup or install from. [default: ${filename}].
+  -f <file>, --filename <file>  Filename to backup or install from. ${YELLOW}[default: ${filename}]${NC}.
   -i, --interactive             Interactive mode.
   -h, --help                    Display this help and exit.
 "
 }
 
+## TODO FOR BACKUP AND INSTALL
+## EXIT STATUS SHOULD REFLECT THE RESULT OF THE CODE COMMANDS
 _backup(){
     overwriteCheck
     code --list-extensions > $filename
