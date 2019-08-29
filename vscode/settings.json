@@ -17,5 +17,6 @@
     "[javascriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "liveSassCompile.settings.generateMap" : false
+    "liveSassCompile.settings.generateMap": false,
+    "markdown.preview.scrollEditorWithPreview": false
 }
