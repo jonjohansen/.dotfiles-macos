@@ -1,14 +1,17 @@
 #!/usr/bin/env bash
+
 #########################################
-### Basic installation of the dotfiles ###
+### Full installation of the dotfiles  ###
 #########################################
-# Set dotfile path, this will be overwritten by the one in .zshrc
+
+# Set dotfile path, this will be overwritten by the one in .zshrc, but will be used for the install
 export DOTFILES=$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )
 
 # Colors
 source $DOTFILES/helpers/colors
 # Error function
 source $DOTFILES/helpers/check_errors.sh
+source $DOTFILES/helpers/brew_bundle_prints.sh
 
 
 printf "\n${BLUE}Full installation of dotfiles starting now. 🤖${NC}\n\n"
@@ -29,6 +32,6 @@ brew upgrade > /dev/null; check_errs $?
 brew tap homebrew/bundle > /dev/null; check_errs $?
 
 printf "${BLUE}Installing from Brewfile..${NC}\n"
-brew bundle; check_errs $?
+brew bundle | brew_bundle_prints;
 
 ./config
