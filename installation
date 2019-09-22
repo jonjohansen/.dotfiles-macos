@@ -1,37 +1,36 @@
 #!/usr/bin/env bash
 
-#########################################
-### Full installation of the dotfiles  ###
-#########################################
-
 # Set dotfile path, this will be overwritten by the one in .zshrc, but will be used for the install
 export DOTFILES=$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )
 
-# Colors
-source $DOTFILES/helpers/colors
-# Error function
-source $DOTFILES/helpers/check_errors.sh
-source $DOTFILES/helpers/brew_bundle_prints.sh
+source $DOTFILES/helpers/colors # Colors
+source $DOTFILES/helpers/check_errors.sh # Error function
+source $DOTFILES/helpers/brew_bundle_prints.sh # Pretty prints for brew bundle
 
-
-printf "\n${BLUE}Full installation of dotfiles starting now. 🤖${NC}\n\n"
+printf "\n${BLUE}${UNDERLINE}Full installation of macos-dotfiles. 🤖${NC}\n\n"
 
 # Get sudo from user for this session, just in case
+printf "${BLUE}We're going to need some ${UNDERLINE}big wheel${NC}${BLUE} privileges. Checkin' if you got em'. 🔑\n${NC}"
 sudo true
-
+printf "\n"
 # Install brew if it is not installed
 if test ! $(which brew); then
-  printf "${BLUE}Installing brew${NC}\n"
+  printf "${BLUE}${UNDERLINE}Installing brew${NC}\n"
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" > /dev/null
   check_errs $?
 fi
 
-printf "${BLUE}Updating & Upgrading brew. This might take a while..${NC}\n"
+printf "${BLUE}${UNDERLINE}Updating & Upgrading brew. This might take a while.${NC}\n"
 brew update > /dev/null; check_errs $?
 brew upgrade > /dev/null; check_errs $?
 brew tap homebrew/bundle > /dev/null; check_errs $?
 
-printf "${BLUE}Installing from Brewfile..${NC}\n"
+printf "${BLUE}${UNDERLINE}Installing from Brewfile.${NC}\n"
 brew bundle | brew_bundle_prints;
 
+printf "\n${BLUE}${UNDERLINE}Installing basher.${NC}\n"
+git clone https://github.com/basherpm/basher.git ~/.basher &> /dev/null; #check_errs $? Should accept already installed.
+
 ./config
+
+printf "\n${GREEN}${UNDERLINE}All applications, settings and configs are completed.\n"

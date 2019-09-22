@@ -9,9 +9,9 @@ source $DOTFILES/helpers/check_errors.sh
 
 sudo true
 ## Lets get started
-printf "\n${BLUE}${UNDERLINE}Configurations${NC}\n\n"
+printf "\n${BLUE}${UNDERLINE}Configurations${NC}\n"
 
-printf "\n${GREEN}${UNDERLINE}General:${NC}\n"
+printf "\n${BLUE}${UNDERLINE}General:${NC}\n"
 ## iTerm
 printf "${BLUE}Setting iTerm settings${NC}\n"
 ./.iterm2; check_errs $?
@@ -21,6 +21,12 @@ printf "\033[1A\r\033[0K${GREEN}iTerm settings\t\t✔${NC}\n"
 printf "${BLUE}Setting macOS settings${NC}\n"
 ./.macos; check_errs $?
 printf "\033[1A\r\033[0K${GREEN}macOS settings\t\t✔${NC}\n"
+printf "${BLUE}Installing basher shell scripts${NC}\n"
+# basher scripts
+PATH="$HOME/.basher/bin:$PATH"
+eval "$(basher init -)"
+./basher
+printf "\033[1A\r\033[0K\033[1A\r\033[0K${GREEN}basher shell scripts\t✔${NC}\n"
 
 ## Zsh config
 ### Remove zshrc if it exists, and symlink this in
@@ -30,7 +36,7 @@ ln -s $DOTFILES/.zshrc $HOME/.zshrc; check_errs $?
 printf "\033[1A\r\033[0K${GREEN}zsh config\t\t✔${NC}\n"
 
 ## git
-printf "\n${GREEN}${UNDERLINE}git:${NC}\n"
+printf "\n${BLUE}${UNDERLINE}git:${NC}\n"
 # Replace .gitconfig with symlink here
 printf "${BLUE}Replacing global .gitconfig${NC}\n"
 rm -rf $HOME/.gitconfig; check_errs $?
@@ -44,7 +50,7 @@ ln -s $DOTFILES/git/.gitignore $HOME/.gitignore; check_errs $?
 printf "\033[1A\r\033[0K${GREEN}Global gitignore\t✔${NC}\n"
 
 # VSCode
-printf "\n${GREEN}${UNDERLINE}Visual Studio Code:${NC}\n"
+printf "\n${BLUE}${UNDERLINE}Visual Studio Code:${NC}\n"
 # If the folder doesn't exist we create it
 printf "${BLUE}  Ensuring vscode config folder is made.${NC}\n"
 mkdir -p ~/Library/Application\ Support/Code/User/; check_errs $?
@@ -64,5 +70,4 @@ printf "\033[1A\r\033[0K${GREEN}  Snippets\t✔${NC}\n"
 
 printf "\n${BLUE}${UNDERLINE}Installing vscode extensions through code-extensions${NC}\n"
 ## Extensions
-./vscode/bin/code-extensions install --filename ./vscode/extensions; check_errs $?
-printf "\033[1A\033[1A\033[1A\033[1A\033[1A\033[1A\033[1A\r\033[0K${GREEN}  Extensions\t✔${NC}\n"
+code-extensions install --filename ./vscode/extensions; check_errs $?

@@ -3,5 +3,6 @@
 ### Path export variables goes here ###
 #######################################
 
-# code-extensions
-PATH=$PATH:$DOTFILES/vscode/bin
+# basher
+export PATH="$HOME/.basher/bin:$PATH"
+eval "$(basher init -)"
