@@ -7,12 +7,17 @@
     My customized dotfiles for macOS
     <br />
     <br />
-    <strong>• Homebrew • iTerm • VSCode • Oh my zsh • Mac preferences •</strong>
+    <strong>• Homebrew • iTerm • VSCode • Oh-my-zsh • Mac preferences •</strong>
     <br />
     <img src="https://travis-ci.com/jonjohansen/.dotfiles-macos.svg?token=ubsrKBxqTLr9vgrzSXu1&branch=master">
   </p>
 </p>
 
+## Overview
+* [Requirements](#requirements)
+* [Installation](#installation)
+* [Customization](#customize)
+* [Content](#content)
 ## Requirements
 To be able to install the dotfiles, you are going to need `git` and `curl`. These are shipped with the **command-line-tools.** To install these run:
 
@@ -22,28 +27,26 @@ xcode-select --install
 ## Installation
 The dotfiles are configured to be installed under `~/.dotfiles-macos/`by default and should be cloned into `$HOME`.
 **See** [location](#Location) to change this.
-<!--
-### Direct install
-Installation directly can be done with: 
+
+1. Clone this repository with:
 ```
-CURL THING
+git clone https://github.com/jonjohansen/.dotfiles-macos.git ~/.dotfiles-macos
 ```
--->
-### Manual install
-Clone this repository with:
-```
-gitlink
-```
-#### Full installation: 
+2. 
+#### Full installation
+Execute the installation script for full installation
 ```
 ./installation
 ```
-#### Only configurations & settings:
+This installs all the applicatins, settings and configurations
+#### Partial installation
+This only installs configurations and settings (Recommended for only adjusting your settings, dotfiles etc)
 ```
 ./config
 ```
+
 ## Customize
-Almost everything can be customized, and it is recommended to get an overlook of what the dotfiles install, adjust them to preferred settings.
+Everything can be customized, and it is recommended to get an overlook of what the dotfiles install and adjust them to preferred settings.
 ### Location 
 If you want to install the dotfiles somewhere else some paths are dependent on the DOTFILES variable.
 
@@ -53,48 +56,53 @@ export DOTFILES="$HOME/.dotfiles-macos/"
 ```
 **Note**:
 
-The reference to `$DOTFILES` in  `installation` will figure itself out. Don't worry about it.
+The reference to `$DOTFILES` in  `installation` will figure itself out. Don't worry about it. 😉
 
 ## Content
-### GUI applications:
-* iTerm
-* Visual Studio Code
-* Spotify
-* Slack
-* Discord
-### Configurations and settings
-
-| Program           | Type           | File                     |
-|-------------------|----------------|--------------------------|
-|macOS              |settings        |`.macos`                  |
-|iTerm              |settings        |`.iterm`                  |
-|                   |config           |`/iterm/`                 |
-|zsh                |config           |`.zshrc`                  |
-|oh-my-zsh          |config           |`.spaceship`              |
-|git                |config           |`git/.gitconfig`           |
-|                   |ignorefile       |`git/.gitignore`          |
-| Visual studio code|settings        |`vscode/settings.json`    |
-|                   |snippets        |`vscode/snippets/`        |
-|                   |extensions      |`vscode/extensions`       |
-|                   |keybindings     |`vscode/keybindings.json` |
+### General:
+* A bunch of settings i use for my macOS
+### Applications:
+* [iTerm][_iterm2] - Terminal
+* [Visual Studio Code][_code] - Editor
+* [Spotify][_spotify] - Music
+* [Slack][_slack] - Chat
+* [Discord][_discord] - Chat
 ### Tools
-#### code-extensions
-A small CLI has been written to handle saving and installing **vscode extensions**.
-The script can be found in `./vscode/bin/code-extensions`.
-```
-code-extensions [--help] [--interactive] <command> [<args>]
+* [zsh][_zsh] / [Oh My Zsh][_oh-my-zsh] - Shell configuration
+* [basher][_basher] - Shell script package manager
 
-A small tool to help backup and install extensions for Visual Studio Code
 
- Usage:
-    code-extensions  --interactive
-    code-extensions  install [--filename <file>]
-    code-extensions  backup  [--filename <file>]
+### Placements of configurations and settings
 
- Options:
-  -f <file>, --filename <file>  Filename to backup or install from.
-  -i, --interactive             Interactive mode.
-  -h, --help                    Display this help and exit.
-```
+| What                      | Type           | Where                    |
+|---------------------------|----------------|--------------------------|
+|[macOS][_macos_settings]   |settings        |`.macos`                  |
+|[iTerm][_iterm2]           |settings        |`.iterm`                  |
+|                           |config           |`/iterm/`                 |
+|[git][_git]                |config           |`git/.gitconfig`           |
+|                           |ignorefile       |`git/.gitignore`          |
+|[zsh][_zsh]                |config           |`.zshrc`                  |
+|[oh-my-zsh][_oh-my-zsh]    |config           |`.spaceship`              |
+|[basher][_basher]          |                |                          |
+|                           |Main folder     |`~/.basher`               |
+|                           |basher packages |`.basher`                 |
+|[Visual studio code][_code]|settings        |`vscode/settings.json`    |
+|                           |snippets        |`vscode/snippets/`        |
+|                           |extensions      |`vscode/extensions`       |
+|                           |keybindings     |`vscode/keybindings.json` |
 
-##
+
+## Disclaimer
+These are my personal settings. You *should* read through every line. Not that you're going to,
+but it is recommended to find your own preferences. 💅
+
+[_macos_settings]: https://pawelgrzybek.com/change-macos-user-preferences-via-command-line/
+[_zsh]: https://www.zsh.org/
+[_basher]: https://github.com/basherpm/basher
+[_oh-my-zsh]: https://github.com/robbyrussell/oh-my-zsh/
+[_code]: https://code.visualstudio.com/
+[_iterm2]: https://www.iterm2.com/
+[_slack]: https://slack.com
+[_discord]: https://discordapp.com/
+[_spotify]: https://www.spotify.com/
+[_git]: https://git-scm.com/

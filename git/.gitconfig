@@ -1,14 +1,16 @@
 [user]
 	name = Jon Johansen
 	email = jonjohansen2k@gmail.com
-    username = jonjohansen
+	username = jonjohansen
+[core]
+	excludesfile = ~/.gitignore
 [color]
 	ui = true
 [push]
 	default = simple
+[pull]
+	rebase = true
 [alias]
-    yeet = push -f
+	yeet = push -f
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 	s = status
-[core]
-	excludesfile = ~/.gitignore
