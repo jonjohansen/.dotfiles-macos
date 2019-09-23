@@ -7,7 +7,7 @@
     My customized dotfiles for macOS
     <br />
     <br />
-    <strong>• Homebrew • iTerm • VSCode • Oh-my-zsh • Mac preferences •</strong>
+    <strong>• Homebrew • iTerm • VSCode • Oh My Zsh • Mac preferences •</strong>
     <br />
     <img src="https://travis-ci.com/jonjohansen/.dotfiles-macos.svg?token=ubsrKBxqTLr9vgrzSXu1&branch=master">
   </p>
