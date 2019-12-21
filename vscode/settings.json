@@ -6,7 +6,7 @@
     "terminal.integrated.fontFamily": "DejaVu Sans Mono for Powerline",
     "python.pythonPath": "/Library/Frameworks/Python.framework/Versions/3.7/bin/python3",
     "window.newWindowDimensions": "maximized",
-    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.view.pdf.viewer": "browser",
     "editor.fontLigatures": true,
     "editor.minimap.enabled": false,
     "html.format.wrapAttributes": "aligned-multiple",
@@ -18,5 +18,117 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "liveSassCompile.settings.generateMap": false,
-    "markdown.preview.scrollEditorWithPreview": false
+    "markdown.preview.scrollEditorWithPreview": false,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "[javascript]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "latex-workshop.view.pdf.tab.editorGroup": "left",
+    "latex-workshop.view.pdf.spreadMode": 0,
+    "latex-workshop.latex.autoBuild.run": "never",
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk 🔃",
+            "tools": [
+                "latexmk"
+            ]
+        },
+        {
+            "name": "latexmk (latexmkrc)",
+            "tools": [
+                "latexmk_rconly"
+            ]
+        },
+        {
+            "name": "latexmk (lualatex)",
+            "tools": [
+                "lualatexmk"
+            ]
+        },
+        {
+            "name": "pdflatex ➞ bibtex ➞ pdflatex × 2",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "pdflatex ➞ bibtex ➞ makeglossaries ➞ pdflatex × 2",
+            "tools": [
+                "pdflatex",
+                "makeglossaries",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "lualatexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-lualatex",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "latexmk_rconly",
+            "command": "latexmk",
+            "args": [
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "makeglossaries",
+            "command": "makeglossaries",
+            "args": [
+              "%DOCFILE%"
+            ]
+          }
+    ],
+    "latex-workshop.latex.autoClean.run": "onBuilt",
+    "latex-workshop.intellisense.citation.label": "title",
+    "latex-workshop.latex.recipe.default": "lastUsed",
+
 }
