@@ -10,7 +10,7 @@ source $DOTFILES/helpers/brew_bundle_prints.sh # Pretty prints for brew bundle
 printf "\n${BLUE}${UNDERLINE}Full installation of macos-dotfiles. 🤖${NC}\n\n"
 
 # Get sudo from user for this session, just in case
-printf "${BLUE}We're going to need some ${UNDERLINE}big wheel${NC}${BLUE} privileges. Checkin' if you got em'. 🔑\n${NC}"
+printf "${BLUE}We're going to need some ${UNDERLINE}big wheel${NC}${BLUE} privileges.\nCheckin' if you got em'. 🔑\n${NC}"
 sudo true
 printf "\n"
 # Install brew if it is not installed
@@ -27,6 +27,11 @@ brew tap homebrew/bundle > /dev/null; check_errs $?
 
 printf "${BLUE}${UNDERLINE}Installing from Brewfile.${NC}\n"
 brew bundle | brew_bundle_prints;
+
+printf "${BLUE}${UNDERLINE}Installing Spaceship theme.${NC}\n"
+git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+
 
 printf "\n${BLUE}${UNDERLINE}Installing basher.${NC}\n"
 git clone https://github.com/basherpm/basher.git ~/.basher &> /dev/null; #check_errs $? Should accept already installed.
