@@ -12,6 +12,8 @@ brew 'zsh'
 brew 'zsh-completions'
 brew "zsh-syntax-highlighting"
 brew 'zsh-completions'
+brew 'bat'
+brew 'autojump'
 brew 'python'
 
 # Apps

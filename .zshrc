@@ -29,3 +29,5 @@ source $DOTFILES/.path
 source $DOTFILES/.alias
 # Export filepath for code-extension cli 
 export DEFAULT_CODE_EXTENSION_FILEPATH="$DOTFILES/vscode/extensions"
+# Autojump init
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
