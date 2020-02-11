@@ -1,10 +1,10 @@
 {
-    "window.zoomLevel": 0,
+    "window.zoomLevel": -1,
     "workbench.colorTheme": "Nord",
     "workbench.statusBar.feedback.visible": false,
     "terminal.external.osxExec": "iterm.app",
     "terminal.integrated.fontFamily": "DejaVu Sans Mono for Powerline",
-    "python.pythonPath": "/Library/Frameworks/Python.framework/Versions/3.7/bin/python3",
+    "python.pythonPath": "",
     "window.newWindowDimensions": "maximized",
     "latex-workshop.view.pdf.viewer": "browser",
     "editor.fontLigatures": true,
@@ -130,5 +130,10 @@
     "latex-workshop.latex.autoClean.run": "onBuilt",
     "latex-workshop.intellisense.citation.label": "title",
     "latex-workshop.latex.recipe.default": "lastUsed",
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.formatOnSave": true,
+    "workbench.sideBar.location": "left",
 
 }
