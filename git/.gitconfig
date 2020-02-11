@@ -11,6 +11,8 @@
 [pull]
 	rebase = true
 [alias]
+	pull-overleaf = pull --rebase=false overleaf master --allow-unrelated-histories
+	push-overleaf = pull overleaf master
 	yeet = push -f
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 	s = status
