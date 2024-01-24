@@ -8,24 +8,24 @@ tap 'homebrew/cask'
 brew 'coreutils' # Incase the ones existing is outdated.
 brew 'git'
 brew 'zsh'
-brew 'zsh-autosuggestions'
-brew "zsh-syntax-highlighting"
-brew 'zsh-completions'
 brew 'starship'
 brew 'bat'
 brew 'autojump'
 brew 'python'
 brew 'node'
 brew 'nvm'
+brew 'htop'
+brew 'sqlite'
 # Apps
 cask 'iterm2'
 cask 'rectangle'
-cask 'figma'
 cask 'google-chrome'
 cask 'visual-studio-code'
 cask 'slack'
 cask 'discord'
 cask 'spotify'
+cask 'docker'
+cask 'notion'
 
 # Fonts
 cask 'font-dejavu-sans-mono-nerd-font'
