@@ -4,15 +4,26 @@
 	username = jonjohansen
 [core]
 	excludesfile = ~/.gitignore
+	editor = code --wait
 [color]
 	ui = true
 [push]
 	default = simple
+	followTags = true
+	autoSetupRemote = true
 [pull]
 	rebase = true
+[merge]
+    tool = vscode
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
+[diff]
+    tool = vscode
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
 [alias]
-	pull-overleaf = pull --rebase=false overleaf master --allow-unrelated-histories
-	push-overleaf = pull overleaf master
+	cp = cherry-pick
 	yeet = push -f
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 	s = status
+	alias = config --global alias.

@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-source $DOTFILES/helpers/check_errors.sh # Error function
-
-# Code extensions cli
-basher install jonjohansen/code-extensions &> /dev/null; check_errs $?
