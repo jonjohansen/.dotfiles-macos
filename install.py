@@ -1,6 +1,8 @@
 from json import load
-from os import symlink, remove, path 
+from os import symlink, remove, path, environ
 from subprocess import run, CalledProcessError
+
+DOTFILES_PATH = "$HOME/.dotfiles-macos"
 
 class color:
    PURPLE = '\033[95m'
@@ -63,7 +65,9 @@ def command_helper(label, command, sudo):
     run(expanded)
 
 if __name__ == '__main__':
-
+  # In case it wasn't set previously 
+  environ['DOTFILES'] = DOTFILES_PATH
+  
   # check if brew installed
   try: 
     run(['which', 'brew'], check=True, capture_output=True)
