@@ -1,0 +1,51 @@
+{
+  "commands": [
+    {
+      "label": "Update brew",
+      "command": "brew update",
+      "sudo": false
+    },
+    {
+      "label": "Upgrade brews",
+      "command": "brew upgrade",
+      "sudo": false
+    },
+    {
+      "label": "Add brew bundle for brewfile support",
+      "command": "brew tap homebrew/bundle",
+      "sudo": false
+    },
+    {
+      "label": "Install formulas from brewfile",
+      "command": "brew bundle --file $DOTFILES/Brewfile",
+      "sudo": false
+    },
+    {
+      "label": "Setting macOs settings",
+      "command": "/bin/bash $DOTFILES/.macos",
+      "sudo": true
+    },
+    {
+      "label": "Setting iterm2 config",
+      "command": "/bin/bash $DOTFILES/iterm2/config",
+      "sudo": false
+    }
+  ],
+  "symlinks": [
+    {
+      "label": "zsh config",
+      "src": "$DOTFILES/.zshrc",
+      "dest": "$HOME/.zshrc"
+    },
+    {
+      "label": "git config",
+      "src": "$DOTFILES/git/.gitconfig",
+      "dest": "$HOME/.gitconfig"
+    },
+    {
+      "label": "global gitignore file",
+      "src": "$DOTFILES/git/.gitignore",
+      "dest": "$HOME/.gitignore"
+    }
+  ]
+}
