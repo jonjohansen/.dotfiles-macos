@@ -1,0 +1,21 @@
+[line_break]
+disabled = true
+
+[character] 
+success_symbol = "[➜](bold green)"
+error_symbol = "[➜](bold red)"
+
+[username]
+show_always = false
+format = "[$user]($style):"
+style_user = "bold blue"
+
+[hostname]
+ssh_only = true
+style = "bold blue"
+
+[nodejs]
+style = "bold green"
+
+[sudo]
+disabled = true

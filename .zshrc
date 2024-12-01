@@ -1,33 +1,46 @@
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
 export DOTFILES="$HOME/.dotfiles-macos"
-# Set theme
-ZSH_THEME="spaceship"
 
 # Set UPDATE interval for zsh
 export UPDATE_ZSH_DAYS=7
 
-# Plugins.
-# More can be found at https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins
-plugins=(
-  git # Bunch of aliases and a few tight functions for git
-  git-auto-fetch # Fetches updates for git automatically
-  osx # Shortcuts for macOS
-  emoji # 🤠
-  brew # Aliases for brew
-)
+# Override the default wordchars and remove '/'
+export WORDCHARS=$(echo "$WORDCHARS" | tr -d "/")
 
 # Auto fetch interval
 GIT_AUTO_FETCH_INTERVAL=300
-# Load ZSH-magic
-source $ZSH/oh-my-zsh.sh
-# Load spaceship theme settings
-source $DOTFILES/.spaceship
+
+# Set starship config variable
+export STARSHIP_CONFIG=$DOTFILES/starship.toml
+
 # Load path settings
 source $DOTFILES/.path
 # Load aliases
 source $DOTFILES/.alias
-# Export filepath for code-extension cli 
-export DEFAULT_CODE_EXTENSION_FILEPATH="$DOTFILES/vscode/extensions"
-# Autojump init
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+# Autojump
+[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+
+# Add auto-suggestions
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+export ZSH_AUTOSUGGEST_STRATEGY=(
+    completion
+    history
+)
+
+# Add zsh-completions
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+  autoload -Uz compinit
+  compinit
+fi
+
+# Add NVM dir
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+
+# Additional syntax highlighting
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+eval "$(starship init zsh)"
