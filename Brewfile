@@ -32,4 +32,5 @@ cask '1password'
 cask 'rider'
 
 # Fonts
+cask 'font-monaspace'
 cask 'font-dejavu-sans-mono-nerd-font'
