@@ -46,6 +46,11 @@
       "label": "global gitignore file",
       "src": "$DOTFILES/git/.gitignore",
       "dest": "$HOME/.gitignore"
+    },
+    {
+      "label": "Ghostty config",
+      "src": "$DOTFILES/ghostty/config",
+      "dest": "$HOME/.config/ghostty/config"
     }
   ]
 }

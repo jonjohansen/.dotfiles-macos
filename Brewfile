@@ -30,6 +30,7 @@ cask 'docker'
 cask 'notion'
 cask '1password'
 cask 'rider'
+cask 'ghostty'
 
 # Fonts
 cask 'font-monaspace'

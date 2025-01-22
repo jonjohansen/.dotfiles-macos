@@ -1,0 +1,10 @@
+font-family = 'Monaspace Neon Var'
+theme = nord
+cursor-style = block
+shell-integration-features = no-cursor
+
+macos-icon = custom-style
+macos-icon-ghost-color = 88c0d0
+macos-icon-screen-color = 5e81ac
+
+
