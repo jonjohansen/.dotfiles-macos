@@ -10,9 +10,13 @@
     <strong>• Homebrew • Starship • Mac preferences • ghostty •</strong>
     <br />
   </p>
+  <p align="center">
+    <img align="center" src="screenshot.png" alt="Logo" width="600">
+  </p>
 </p>
 
 ## Overview
+
 
 - [Requirements](#requirements)
 - [Installation](#installation)
