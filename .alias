@@ -6,3 +6,7 @@ alias gst="git status"
 
 alias rider="open -na \"/Applications/Rider.app/\" --args"
 alias ofd="open -R"
+alias simulator="open -a Simulator"
+alias flutter="fvm flutter ${@:1}"
+alias dart="fvm dart ${@:1}"
+

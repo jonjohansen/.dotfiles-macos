@@ -43,6 +43,8 @@ export ZSH_AUTOSUGGEST_STRATEGY=(
     history
 )
 
+# Dart completion
+source ~/.dart-cli-completion/zsh-config.zsh
 
 # Add NVM dir
 export NVM_DIR="$HOME/.nvm"
