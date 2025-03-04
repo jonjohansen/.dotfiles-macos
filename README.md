@@ -7,7 +7,7 @@
     My customized dotfiles for macOS
     <br />
     <br />
-    <strong>• Homebrew • Starship • Mac preferences •</strong>
+    <strong>• Homebrew • Starship • Mac preferences • ghostty •</strong>
     <br />
   </p>
 </p>
@@ -75,6 +75,7 @@ export DOTFILES="$HOME/.dotfiles-macos/"
 | [macOS][_macos_settings] | settings   | `.macos`         |
 | [git][_git]              | config     | `git/.gitconfig` |
 |                          | ignorefile | `git/.gitignore` |
+| [ghostty][_ghostty]      | config     | `ghostty/config` |
 | [zsh][_zsh]              | config     | `.zshrc`         |
 | [starship][_starship]    | config     | `starship.toml`  |
 
@@ -85,4 +86,5 @@ but it is recommended to find your own preferences. 💅
 
 [_macos_settings]: https://pawelgrzybek.com/change-macos-user-preferences-via-command-line/
 [_starship]: https://starship.rs/
+[_ghostty]:https://ghostty.org/
 [_git]: https://git-scm.com/
