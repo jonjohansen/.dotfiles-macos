@@ -88,7 +88,8 @@ export DOTFILES="$HOME/.dotfiles-macos/"
 These are my personal settings. You _should_ read through every line. Not that you're going to,
 but it is recommended to find your own preferences. 💅
 
-[_macos_settings]: https://pawelgrzybek.com/change-macos-user-preferences-via-command-line/
+[_macos_settings]: https://macos-defaults.com/
+[_zsh]: https://www.zsh.org/
 [_starship]: https://starship.rs/
 [_ghostty]:https://ghostty.org/
 [_git]: https://git-scm.com/
