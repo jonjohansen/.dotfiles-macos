@@ -1,4 +1,3 @@
-# Path to your oh-my-zsh installation.
 export DOTFILES="$HOME/.dotfiles-macos"
 
 # Set UPDATE interval for zsh
@@ -18,29 +17,35 @@ source $DOTFILES/.path
 # Load aliases
 source $DOTFILES/.alias
 
+if ! type brew &>/dev/null; then
+  echo "\e[1;31mError: Homebrew is not installed. Please install it.\e[0m\n"
+  return 1
+fi
+
+BREW_PREFIX=$(brew --prefix)
+
+# Add zsh-completions
+FPATH=$BREW_PREFIX/share/zsh-completions:$FPATH
+autoload -Uz compinit
+compinit
+
 # Autojump
-[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+source $BREW_PREFIX/etc/autojump.sh
 
 # Add auto-suggestions
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Additional syntax highlighting
+source $BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export ZSH_AUTOSUGGEST_STRATEGY=(
     completion
     history
 )
 
-# Add zsh-completions
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-  autoload -Uz compinit
-  compinit
-fi
 
 # Add NVM dir
 export NVM_DIR="$HOME/.nvm"
-  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
-
-# Additional syntax highlighting
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source "/opt/homebrew/opt/nvm/nvm.sh"
 
 eval "$(starship init zsh)"
