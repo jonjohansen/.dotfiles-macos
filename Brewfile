@@ -20,7 +20,6 @@ brew 'zsh-completions'
 brew 'zsh-syntax-highlighting'
 
 # Apps
-cask 'iterm2'
 cask 'rectangle'
 cask 'google-chrome'
 cask 'visual-studio-code'

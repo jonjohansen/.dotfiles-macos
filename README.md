@@ -7,7 +7,7 @@
     My customized dotfiles for macOS
     <br />
     <br />
-    <strong>• Homebrew • iTerm • Starship • Mac preferences •</strong>
+    <strong>• Homebrew • Starship • Mac preferences •</strong>
     <br />
   </p>
 </p>
@@ -73,8 +73,6 @@ export DOTFILES="$HOME/.dotfiles-macos/"
 | What                     | Type       | Where            |
 | ------------------------ | ---------- | ---------------- |
 | [macOS][_macos_settings] | settings   | `.macos`         |
-| [iTerm][_iterm2]         | settings   | `/iterm/`        |
-|                          | config     | `/iterm/config`  |
 | [git][_git]              | config     | `git/.gitconfig` |
 |                          | ignorefile | `git/.gitignore` |
 | [zsh][_zsh]              | config     | `.zshrc`         |
@@ -86,7 +84,5 @@ These are my personal settings. You _should_ read through every line. Not that y
 but it is recommended to find your own preferences. 💅
 
 [_macos_settings]: https://pawelgrzybek.com/change-macos-user-preferences-via-command-line/
-[_zsh]: https://www.zsh.org/
 [_starship]: https://starship.rs/
-[_iterm2]: https://www.iterm2.com/
 [_git]: https://git-scm.com/

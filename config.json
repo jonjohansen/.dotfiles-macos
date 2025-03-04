@@ -24,11 +24,6 @@
       "label": "Setting macOs settings",
       "command": "/bin/bash $DOTFILES/.macos",
       "sudo": true
-    },
-    {
-      "label": "Setting iterm2 config",
-      "command": "/bin/bash $DOTFILES/iterm2/config",
-      "sudo": false
     }
   ],
   "symlinks": [
